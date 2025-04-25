@@ -2,6 +2,7 @@
 
 import OutlinedButton from "@/components/OutlinedButton";
 import SolidButton from "@/components/SolidButton";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -67,7 +68,9 @@ export default function Home() {
 
         <p className="mb-2 text-center text-sm">or</p>
 
-        <OutlinedButton text="Create New Room" />
+        <Link href="/waiting-for-opponent" className="block w-full">
+          <OutlinedButton text="Create New Room" />
+        </Link>
       </div>
     </div>
   );
