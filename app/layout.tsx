@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barriecito, Indie_Flower } from "next/font/google";
+import { Barriecito, Nunito_Sans } from "next/font/google";
 import "../styles/globals.css";
 
 const barriecitoSans = Barriecito({
@@ -8,10 +8,9 @@ const barriecitoSans = Barriecito({
   weight: ["400"],
 });
 
-const indieFlower = Indie_Flower({
-  variable: "--font-indie-flower",
+const nunitoSans = Nunito_Sans({
+  variable: "--font-nunito-sans",
   subsets: ["latin"],
-  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -27,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${barriecitoSans.variable} ${indieFlower.variable} antialiased`}
+        className={`${barriecitoSans.variable} ${nunitoSans.variable} antialiased`}
       >
         {children}
       </body>

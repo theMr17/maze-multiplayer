@@ -14,7 +14,7 @@
   --color-background: var(--color-bg);
   --color-foreground: var(--color-primary);
   --font-title: var(--font-barriecito-sans);
-  --font-sans: var(--font-indie-flower);
+  --font-sans: var(--font-nunito-sans);
 }
 
 @media (prefers-color-scheme: dark) {

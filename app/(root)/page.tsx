@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <div
-      className="flex min-h-screen items-center px-6 font-sans"
+      className="flex min-h-screen flex-wrap items-center px-6 font-sans"
       style={{ backgroundColor: "var(--color-bg)", color: "var(--color-text)" }}
     >
       {/* Left Side */}
