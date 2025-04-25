@@ -44,7 +44,7 @@ export default function Home() {
           </label>
           <p className="text-l mb-4">
             Enter a room code to join an existing room or create a new one if
-            you don't have one yet.
+            you don&apos;t have one yet.
           </p>
 
           <input
