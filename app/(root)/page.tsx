@@ -4,9 +4,25 @@ import OutlinedButton from "@/components/OutlinedButton";
 import SolidButton from "@/components/SolidButton";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { joinRoom } from "@/app/socket";
 
 export default function Home() {
   const [roomCode, setRoomCode] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  const handleJoinRoom = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+
+    try {
+      await joinRoom(roomCode);
+      router.push("/play");
+    } catch (err) {
+      setError("Room not found. Please check the code and try again.");
+    }
+  };
 
   return (
     <div
@@ -35,7 +51,7 @@ export default function Home() {
         className="max-w-l m-10 flex-3 rounded-xl p-12 shadow-lg"
         style={{ backgroundColor: "var(--color-secondary-bg)" }}
       >
-        <form className="mb-2 w-full">
+        <form className="mb-2 w-full" onSubmit={handleJoinRoom}>
           <label
             htmlFor="room-code"
             className="mb-3 block text-3xl font-bold"
@@ -65,6 +81,10 @@ export default function Home() {
 
           <SolidButton text="Join Room" />
         </form>
+
+        {error && (
+          <p className="mb-4 text-center font-semibold text-red-600">{error}</p>
+        )}
 
         <p className="mb-2 text-center text-sm">or</p>
 

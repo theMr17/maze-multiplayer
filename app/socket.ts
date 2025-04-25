@@ -2,18 +2,8 @@ import { io, Socket } from "socket.io-client";
 
 let socket: Socket | null = null;
 
-export const connectSocket = () => {
-  if (!socket) {
-    socket = io("https://maze-multiplayer-backend.onrender.com");
-  }
-
-  if (!socket.connected && socket.disconnected) {
-    socket.connect();
-  }
-};
-
 export const getSocket = () => {
-  if (!socket) throw new Error("Socket not connected");
+  if (!socket) socket = io("http://maze-multiplayer-backend.onrender.com");
   return socket;
 };
 
