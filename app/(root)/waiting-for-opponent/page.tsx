@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { createRoom, onSocketConnect, offSocketConnect } from "@/app/socket";
+import { createRoom } from "@/app/socket";
 
 export default function WaitingForOpponent() {
   const [roomCode, setRoomCode] = useState<string | null>(null);
