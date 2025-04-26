@@ -20,7 +20,7 @@ export default function Home() {
       await joinRoom(roomCode);
       router.push("/play");
     } catch (err) {
-      setError("Room not found. Please check the code and try again.");
+      console.error("Error joining room:", err);
     }
   };
 
